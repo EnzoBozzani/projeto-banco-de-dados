@@ -11,3 +11,5 @@ Igor Augusto Fiorini Rossi - R.A.: 24.122.023-5
 Luca Anequini Antoniazzi - R.A.: 24.122.032-6
 
 ## Diagrama:
+
+![./diagram.png](./diagram.png)
