@@ -1,15 +1,15 @@
 create table course 
     (id varchar(6),
-    title varchar(20),
+    title varchar(100),
     primary key(id)
     );
 
 create table professor
     (id varchar(9),
-    name varchar(20),
-    dept_name varchar(20), 
+    name varchar(100),
+    dept_name varchar(100), 
     salary numeric(8, 2),
-    primary key(id),
+    primary key(id)
     );
 
 create table tcc_group
@@ -20,7 +20,7 @@ create table tcc_group
     );
 
 create table department
-    (dept_name varchar(20),
+    (dept_name varchar(100),
     budget numeric(12, 2),
     boss_id varchar(9),
     primary key(dept_name),
@@ -29,7 +29,7 @@ create table department
 
 create table student 
     (id varchar(9), 
-    name varchar(20),
+    name varchar(100),
     course_id varchar(6),
     group_id varchar(9),
     primary key (id),
@@ -39,8 +39,8 @@ create table student
 
 create table subj
     (id varchar(6),    
-    title varchar(20), 
-    dept_name varchar(20),
+    title varchar(100), 
+    dept_name varchar(100),
     primary key(id),
     foreign key(dept_name) references department(dept_name)
     );
@@ -51,6 +51,7 @@ create table takes
     semester int check (semester = 1 OR semester = 2),
     year int check (year >= 1900),
     grade decimal check (grade >= 0 AND grade <= 10),
+    subjroom varchar(5),
     primary key(student_id, subj_id, semester, year),
     foreign key(student_id) references student(id),
     foreign key(subj_id) references subj(id)
